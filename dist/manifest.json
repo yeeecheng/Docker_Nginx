@@ -1,0 +1,14 @@
+{
+  "name": "Smart Farm",
+  "short_name": "Smart Farm",
+  "icons": [{
+    "src": "/favicon.ico",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF",
+  "theme_color": "#000"
+}
