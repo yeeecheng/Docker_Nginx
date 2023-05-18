@@ -1,7 +1,7 @@
 
 From nginx 
 
-MAINTAINER ps 
+MAINTAINER yicheng 
 
 RUN rm /etc/nginx/conf.d/default.conf
 
