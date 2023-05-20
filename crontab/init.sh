@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-apt-get update && apt-get install cron -y && apt-get install jq
+apt-get update && apt-get install cron -y && apt-get install jq -y && apt-get install wget -y
 
 mv /cronjob /etc/cron.d/cronjob
 
