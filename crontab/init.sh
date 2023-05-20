@@ -1,7 +1,11 @@
 #!/bin/bash 
 
-apt-get update && apt-get install cron -y
+apt-get update && apt-get install cron -y && apt-get install jq
 
-echo "* * * * * /smart-farm/crontab/wget_weather.sh" > /etc/crontab
+mv /cronjob /etc/cron.d/cronjob
+
+chmod 0644 /etc/cron.d/cronjob 
+
+crontab /etc/cron.d/cronjob
 
 

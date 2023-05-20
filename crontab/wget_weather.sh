@@ -11,10 +11,10 @@ if [[ $(echo "$response" | jq -r '.success') == "true" ]]; then
 
     if [ "${#weather_state}" -ge 2 ]; then
         file_url="https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/$weather_state.svg"
-        wget -q -O "weather_state/$weather_state.svg" "$file_url"
+        wget -q -O "/smart-farm/$weather_state.svg" "$file_url"  
     else
         file_url="https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/0$weather_state.svg"
-        wget -q -O "weather_state/$weather_state.svg" "$file_url"
+        wget -q -O "/smart-farm/$weather_state.svg" "$file_url"
     fi
 else
     echo "Can't get data!"
