@@ -1,8 +1,9 @@
 version: "3.4"
 services:
   nginx:
-    image: nginx
+    image: crontab-nginx
     container_name: nginx-server
+    restart: always
     ports:
       - "8888:80"
     volumes:
