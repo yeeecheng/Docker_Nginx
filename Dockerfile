@@ -1,10 +1,18 @@
+FROM node:14
 
-From nginx 
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
 
-MAINTAINER yicheng 
+COPY ./wait-for-it.sh .
+RUN chmod +x ./wait-for-it.sh
 
-RUN rm /etc/nginx/conf.d/default.conf
+EXPOSE 8088
 
-ADD default.conf /etc/nginx/conf.d/
+VOLUME [ "/app/node_modules" ]
 
-COPY dist/ /usr/share/nginx/html/
+ENTRYPOINT [ "./wait-for-it.sh" , "linux_sql:3306" , "--" ]
+
+CMD ["npm", "run", "start"]
+

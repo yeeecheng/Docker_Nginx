@@ -13,3 +13,28 @@ services:
     volumes:
       - ./dist:/usr/share/nginx/html
       - ./default.conf:/etc/nginx/conf.d/default.conf
+
+  linux_server:
+      
+    build:
+      context: .
+      dockerfile: Dockerfile 
+                       
+    # image: sunny1928/smart_farm
+    ports:
+      - 8088:8088
+
+    depends_on:
+      - linux_sql
+    restart: on-failure
+
+
+  linux_sql:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=smart_farm_db 
+      - MYSQL_ROOT_PASSWORD=a10955
+
+
+
+
