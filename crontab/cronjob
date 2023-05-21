@@ -1,1 +1,1 @@
-0-30 6 * * * /wget_weather.sh 
+0 7 * * * /wget_weather.sh 
