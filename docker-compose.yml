@@ -5,7 +5,7 @@ services:
 
   nginx:
     
-    image: crontab-nginx
+    image: yeeecheng/crontab-nginx
     container_name: nginx-server
     restart: always
     ports:
@@ -18,7 +18,7 @@ services:
       
    
                        
-    image: server
+    image: sunny1928/smart_farm
     ports:
       - "8088:8088"
 
